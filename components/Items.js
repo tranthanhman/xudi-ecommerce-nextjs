@@ -16,7 +16,7 @@ const Items = (props) => {
             <div>{props.name}</div>
             <ul className='flex items-center gap-1'>
             {Array(props.rate).fill(0).map((_, i) => (
-                <li><AiFillStar key={i} size={15} className='text-yellow-400' /></li>
+                <li key={i}><AiFillStar  size={15} className='text-yellow-400' /></li>
             ))}
             </ul>
             <div className='text-red-600 font-bold'>{props.price} đ </div>
