@@ -1,12 +1,14 @@
-import Head from 'next/head'
 import Catagory from '../components/Catagory'
 import Items from '../components/Items'
+import NavBar from '../components/layouts/NavBar'
 import MiniBanner from '../components/MiniBanner'
 import clientPromise from '../lib/mongodb'
 
 export default function Home({ isConnected }) {
   return (
-    <div className='w-4/5 mx-auto container space-y-2.5'>
+    <>
+      <NavBar />
+      <div className='container space-y-2.5'>
       <Catagory />
       <div className='flex gap-10 items-center w-full'>
         {Array(3).fill(0).map((_, i) => (
@@ -18,18 +20,20 @@ export default function Home({ isConnected }) {
         <div className='sticky grid grid-cols-7 gap-2 w-full'>
           {Array(7).fill(0).map((_, i) => (
             <div key={i} className='w-full border rounded-md'>
-              <div className='w-auto h-28 bg-blue-300'></div>
+              <div className='w-auto h-28 bg-primary'></div>
               <div className='py-2 text-center'>Do gia dung</div>
             </div>
           ))}
         </div>
-        <div className='grid grid-cols-6 bg-white gap-y-2 w-full'>
+        <div className='grid grid-cols-6  gap-3 w-full'>
           {Array(12).fill(0).map((_, i) => (
             <Items key={i} name={'iphone'} rate={5} price={'200.000'} />
           ))}
         </div>
       </div>
     </div>
+    </>
+    
   )
 }
 

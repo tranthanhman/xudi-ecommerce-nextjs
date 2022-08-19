@@ -2,9 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    box-sizing: border-box;
+@layer base {
+  h1 {
+    @apply text-2xl text-black;
+  }
+
+  h2 {
+    @apply text-xl text-black;
+  }
+
+  h3 {
+    @apply text-lg text-black;
+  }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -14,13 +64,55 @@ html {
   font-size: 13px;
 }
 
+main {
+  display: block;
+  min-height:100vh;
+  height:100%
+}
+
 body {
   margin: 0;
+  height: 100vh;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #242424;
   text-align: left;
   background-color: #f4f4f4;
 }
 
+footer {
+  left: 0;
+  bottom: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: normal;
+  color: #808089;
+  background-color: white;
+  padding: 20px 0;
+}
+
+ul>li>a:hover {
+  @apply text-primary transition
+}
+
+input {
+  @apply focus:outline-none
+}
+
+/* button */
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+
+.btn-primary {
+  @apply bg-primary text-white;
+}
+
+.btn-primary:hover {
+  @apply bg-primary opacity-80;
+}

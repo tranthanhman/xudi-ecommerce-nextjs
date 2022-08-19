@@ -4,7 +4,7 @@ import React from 'react'
 const NavBar = () => {
     return (
         <nav className='bg-white'>
-            <div className='container mx-auto w-4/5'>
+            <div className='container flex justify-between items-center'>
                 <ul className='flex justify-between items-center w-full'>
                     {navs.map((nav, i) => (
                         <Link href={nav.link} key={i}>

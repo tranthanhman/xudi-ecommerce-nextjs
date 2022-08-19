@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import mini from '../public/assets/images/mini-banner/1.png'
+import mini from '../public/static/images/mini-banner/1.png'
 
   
 const MiniBanner = ({props}) => {

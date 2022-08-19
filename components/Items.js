@@ -1,26 +1,28 @@
 import React from 'react'
-import item from '../public/assets/images/products/1.jpg'
-import {AiFillStar} from 'react-icons/ai'
+import item from '../public/static/images/products/1.jpg'
+import { AiFillStar } from 'react-icons/ai'
 import Image from 'next/image'
 const Items = (props) => {
     return (
-        <div key={props} className='flex flex-1 flex-col w-full px-3 hover:shadow-lg py-3'>
+        <div className='hover:shadow-lg max-w-[200px] max-h-[272px] overflow-hidden bg-white rounded-md hover:border-primary transition'>
+            <div key={props} className='flex flex-1 flex-col w-full '>
             <Image
                 src={item}
                 alt="Picture of the author"
                 className='rounded-3xl'
-                width={200}
-                height={180}
-                objectFit="cover"
+                width={188}
+                height={188}
+                objectFit="contain"
             />
-            <div>{props.name}</div>
-            <ul className='flex items-center gap-1'>
-            {Array(props.rate).fill(0).map((_, i) => (
-                <li key={i}><AiFillStar  size={15} className='text-yellow-400' /></li>
-            ))}
-            </ul>
-            <div className='text-red-600 font-bold'>{props.price} đ </div>
-            
+            <div className='p-2'>
+                <div className='pb-1 overflow-clip '>{props.name}</div>
+                <div className='flex justify-between items-center'>
+                    <span className='text-red-600 font-bold '>{props.price} đ </span>
+                    <span>{props.price} đ </span>
+                </div>
+            </div>
+
+        </div>
         </div>
     )
 }
