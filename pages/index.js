@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import Breadscrumb from '../components/Breadscrumb'
 import Catagory from '../components/Catagory'
 import Items from '../components/Items'
 import NavBar from '../components/layouts/NavBar'
@@ -7,8 +9,7 @@ import clientPromise from '../lib/mongodb'
 export default function Home({ isConnected }) {
   return (
     <>
-      <NavBar />
-      <div className='container space-y-2.5'>
+      <div className='space-y-2.5'>
       <Catagory />
       <div className='flex gap-10 items-center w-full'>
         {Array(3).fill(0).map((_, i) => (
@@ -27,7 +28,11 @@ export default function Home({ isConnected }) {
         </div>
         <div className='grid grid-cols-6  gap-3 w-full'>
           {Array(12).fill(0).map((_, i) => (
-            <Items key={i} name={'iphone'} rate={5} price={'200.000'} />
+            <Link href={'/[id]'} as={`${i}`} key={i}>
+              <a>
+                <Items key={i} name={'iphone'} rate={5} price={'200.000'} />
+              </a>
+            </Link>
           ))}
         </div>
       </div>

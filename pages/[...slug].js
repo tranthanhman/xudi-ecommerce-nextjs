@@ -2,7 +2,9 @@ import React from 'react'
 
 const Detail = () => {
   return (
-    <div>[...slug]</div>
+    <div>
+      slug
+    </div>
   )
 }
 

@@ -8,11 +8,11 @@ const Cart = () => {
   return (
     <div className='container my-10'>
       <h1>Giỏ hàng</h1>
-      <div className='grid grid-cols-[auto_310px] gap-10 mt-5'>
-        <div>
+      <div className='grid grid-cols-[auto_310px] gap-10 mt-5 w-full'>
+        <div className=' w-full'>
           <div className='flex-1'>
             <div>
-              <div className='grid grid-cols-[400px_190px_130px_130px_auto] sticky mb-3 top-5 z-50 items-center bg-white py-2 px-4 rounded-sm'>
+              <div className='grid grid-cols-[340px_150px_130px_130px_auto] sticky mb-3 top-5 z-50 items-center bg-white py-2 px-4 rounded-sm'>
                 <label className='flex gap-1'>
                   <input type="checkbox" />
                   <span>Tất cả (1 sản phẩm)</span>
@@ -28,14 +28,15 @@ const Cart = () => {
           </div>
           <div className='flex-1'>
             <div className='h-auto overflow-auto'>
-              <div className='grid grid-cols-[400px_190px_130px_130px_auto] mb-3 top-5 z-50 items-center bg-white py-2 px-4 rounded-sm'>
+              <div className='grid grid-cols-[340px_150px_130px_130px_auto] mb-3 top-5 z-50 items-center bg-white py-2 px-4 rounded-sm '>
                 <label className='flex gap-1'>
                   <input type="checkbox" />
                   <div className='flex gap-1 items-start px-3'>
-                    <span className='rounded w-full'>
+                    <span className='rounded w-full min-w-[80px] min-h-[80px] h-full'>
                       <Image
                         src={item}
                         alt="Picture of the author"
+                        className='h-full'
                         width={80}
                         height={80}
                         objectFit="contain"
@@ -60,23 +61,7 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <div>
-          <div className='flex-1'>
-            <div>
-              <div className='grid grid-cols-[400px_190px_130px_130px_auto] sticky mb-3 top-5 z-50 items-center bg-white py-2 px-4 rounded-sm'>
-                <label className='flex gap-1'>
-                  <input type="checkbox" />
-                  <span>Tất cả (1 sản phẩm)</span>
-                </label>
-                <span>Đơn giá</span>
-                <span>Số lượng</span>
-                <span>Thành tiền</span>
-                <span>
-                  <BiTrash size={24} className='text-gray-500' />
-                </span>
-              </div>
-            </div>
-          </div>
+        <div className=' w-full'>
           <div className='flex-1'>
             <div className='h-auto overflow-auto'>
                 <div className='flex flex-col gap-3 w-full'>
