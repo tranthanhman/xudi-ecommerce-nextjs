@@ -47,7 +47,7 @@ const Login = () => {
             expires: 7
         })
 
-        localStorage.setItem('fisrtLogin', true)
+        localStorage.setItem('firstLogin', true)
     }
 
 
@@ -65,8 +65,8 @@ const Login = () => {
                     <div className='max-w-md w-full'>
                         <h1>Đăng Nhập</h1>
                         <form onSubmit={handleSubmit} method="POST" className='py-3 space-y-3'>
-                            <input name="phone" type="text" placeholder="Số điện thoại" className='p-2 border rounded w-full' onChange={handleChangeInput} />
-                            <input name="password" type="password" placeholder="Mật khẩu" className='p-2 border rounded w-full' onChange={handleChangeInput} />
+                            <input name="phone" value={phone} type="text" placeholder="Số điện thoại" className='p-2 border rounded w-full' onChange={handleChangeInput} />
+                            <input name="password" value={password} type="password" placeholder="Mật khẩu" className='p-2 border rounded w-full' onChange={handleChangeInput} />
                             <button type="submit" className='btn btn-primary w-full'>Đăng nhập</button>
                         </form>
                         <div>

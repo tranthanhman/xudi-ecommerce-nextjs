@@ -1,5 +1,5 @@
 import connectDB from '../../../utils/connectDB';
-import { jwt } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import { createAccessToken } from '../../../utils/generateToken';
 import Users from '../../../models/userModel';
 
@@ -7,13 +7,13 @@ connectDB()
 
 export default async (req, res) => {
     try {
-        const rf_token = req.cookies.refresh_token
+        const rf_token = req?.cookies?.refresh_token
         if(!rf_token) return res.status(400).json({ err: 'Please login now!' })
        
-        const result = await jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET)
+        const result = jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET)  
         if(!result) return res.status(400).json({ err: 'Your token is incorrect or has expired' })
 
-        const user = await Users.findOne({ _id: result.id })
+        const user = await Users.findOne({_id:result.id})
         if(!user) return res.status(400).json({ err: 'User not found' })
 
         const access_token = createAccessToken({ id: user._id })
