@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     },
     avatar: {
         type: String,
-        required: true,
+        default: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
     },
     phone: {
         type: String,
@@ -24,15 +24,15 @@ const userSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        required: true,
+        default: 'user'
     },
     root: {
-        type: String,
-        required: true,
+        type: Boolean,
+        default: false
     },
 },{ 
     timeStamps: true 
 });
 
-let Dataset = mongoose.model.user || mongoose.model('user', userSchema);
+let Dataset = mongoose.models.user || mongoose.model('user', userSchema);
 export default Dataset;

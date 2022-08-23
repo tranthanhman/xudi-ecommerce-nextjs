@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { BiTrash,BiMinus,BiPlus } from 'react-icons/bi'
 import item from '../public/static/images/products/1.jpg'
-import { formatCurrency } from '../lib/utility'
+import { formatCurrency } from '../utils/utility'
 
 const Cart = () => {
   return (
